@@ -8,7 +8,7 @@ The main focus is for ePSXe version 2.0.0 since this is the main emulator used b
 These auto splitters are all written in ASL. You can learn more about how to write ASL in the official [LiveSplit AutoSplitter repository](https://github.com/LiveSplit/LiveSplit.AutoSplitters).
 
 This collection contains the following auto splitters:
-* **MediSplit Any% AutoSplitter.asl** - An auto splitter for Any% runs with Zarok's Lair subsplits.
+* **MediSplit Any%.asl** - An auto splitter and auto starter for Any% runs with Zarok's Lair subsplits.
 
 This list will be updated as new auto splitters are created with different setups.
 
@@ -97,3 +97,12 @@ Here is a list of all the levels and their respective IDs in the memory:
 * 23 - The Time Device
 * 25 - Zarok's Lair
 * 24 - Intro and Main menu
+
+## Using an Auto Splitter
+
+To use any of the auto splitters downloaded from this repository, add the *Scriptable Auto Splitter* component to your Layout on LiveSplit and, in its settings, select the ASL file you want to use. Right-click on LiveSplit and choose "Edit Layout..." to open the Layout Editor, then click on the Plus-sign and choose "Scriptable Auto Splitter" from the section "Control". You can set the Path of the Script by going into the component settings of the Scriptable Auto Splitter. To get to the settings of the component, you can either double-click it in the Layout Editor or go into the Scriptable Auto Splitter Tab of the Layout Settings. Once you've set the Path, the script should automatically load and hopefully work.
+
+## Additional Resources
+* [MediEvil Speedrun Discord](https://discord.gg/V5DZEq9Fbf)
+* [MediEvil on Speedrun.com](https://www.speedrun.com/medievil)
+* [LiveSplit Auto Splitters Documentation](https://github.com/LiveSplit/LiveSplit.AutoSplitters)
