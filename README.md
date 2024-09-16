@@ -1,13 +1,21 @@
 # MediEvil
 Tools and docs for MediEvil for PSX.
 
+- [Memory Addresses](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#memory-addresses)
+    - [General Game Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#general-game-data)
+    - [Bosses Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#bosses-data)
+    - [Inventory Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#inventory-data)
+    - [Weapons Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#weapons-data)
+    - [Items Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#items-data)
+- [Level IDs](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#level-ids)
+
 ## Memory Addresses
 
 These addresses are all consistent between resets of ePSXe. We only want to use permanent addresses on auto splitters to not spend time searching for them every time we start the emulator.
 
 All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the full levelID address would be `ePSxe.exe+82A020`. For simplicity, we omit the `ePSxe.exe+` prefix in the tables below.
 
-#### General Game Data
+### General Game Data
 |Name|Type|Address|Description|
 |---|---|---|---|
 |levelID|byte|82A020|Contains the levle ID. Changes in between loading screens.|
@@ -21,16 +29,16 @@ All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the f
 |musicTrack|byte|908F20|Contains the numeric ID of the music track being played.|
 |cameraView|byte|9CA074|Contains the numeric ID of the camera view currently used.|
 
-#### Bosses Data
+### Bosses Data
 |Name|Type|Address|Description|
 |---|---|---|---|
 |isBoss|byte|90B72C|Set to 1 if a boss is present, otherwise 0.|
 |bossHealth|ushort|90B734|Contains the current health of the boss, or 0 when no boss is present.|
 
-#### Inventory Data
+### Inventory Data
 These addresses track the ownership and ammos of weapons and other inventory items. They are set to `FF 00` (255 in decimal) when the player does not own the specific item, changing to `00 00` (0 in decimal), `01 00` (1 in decimal), or the amount of ammos/durability when owning the item.
 
-#### Weapons
+### Weapons Data
 |Name|Type|Address|
 |---|---|---|
 |smallSword|ushort|912214|
@@ -54,7 +62,7 @@ These addresses track the ownership and ammos of weapons and other inventory ite
 |silverShield|ushort|9122A0|
 |goldShield|ushort|9122B4|
 
-#### Items
+### Items Data
 |Name|Type|Address|
 |---|---|---|
 |chaosRune|ushort|912250|
@@ -67,7 +75,7 @@ These addresses track the ownership and ammos of weapons and other inventory ite
 |witchTalisman|ushort|912284|
 |dragonGems|ushort|9122B0|
 
-### Levels ID
+## Level IDs
 |Level Name|ID|
 |---|---|
 |Dan's Crypt|6|
