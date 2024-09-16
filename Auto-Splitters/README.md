@@ -5,10 +5,15 @@ The main focus is for ePSXe version 2.0.0 since this is the main emulator used b
 
 ## Auto Splitters for LiveSplit
 
-These auto splitters are all written in ASL. You can learn more about how to write ASL in the official [LiveSplit AutoSplitter repository](https://github.com/LiveSplit/LiveSplit.AutoSplitters).
+These auto splitters are all written in ASL and they also auto start LiveSplit when selecting *New Game* in game. You can learn more about how to write ASL in the official [LiveSplit AutoSplitter repository](https://github.com/LiveSplit/LiveSplit.AutoSplitters).
 
 This collection contains the following auto splitters:
-* **MediSplit Any%.asl** - An auto splitter and auto starter for Any% runs with Zarok's Lair subsplits.
+* **MediSplit Any%.asl** - All levels have their own split.
+* **MediSplit Any% - Zarok Subsplits.asl** - All levels, but Zarok's Lair has subsplits for Fazguls' fight, Kardok, and Zarok.
+* **MediSplit Any% - With Rune Smuggle.asl** - All levels and a separate split for *Rune Smuggle*.
+* **MediSplit Any% - With Rune Smuggle and Zarok subsplits.asl** - All levels and a separate split for *Rune Smuggle*. Includes subsplits for Zarok's Lair.
+* **MediSplit Any% - Subsplits All Bosses.asl** - All levels with subsplits for each boss fight.
+* **MediSplit Any% - Subsplits All Bosses and Rune Smuggle.asl** - All levels with subsplits for each boss fight and for *Rune Smuggle*.
 
 This list will be updated as new auto splitters are created with different setups.
 
