@@ -4,7 +4,7 @@
  * @author SirDarcanos
  * @contributors BlackMenthol, Xeelze
  * @version 1.0.0
- * @link
+ * @link https://github.com/SiR-DanieL/MediEvil/tree/main/Auto-Splitters
  * @tested-on ePSxe 2.0.0
  */
 
