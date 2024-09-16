@@ -1,13 +1,13 @@
 # MediEvil
 Tools and docs for MediEvil for PSX.
 
-- [Memory Addresses](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#memory-addresses)
-    - [General Game Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#general-game-data)
-    - [Bosses Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#bosses-data)
-    - [Inventory Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#inventory-data)
-    - [Weapons Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#weapons-data)
-    - [Items Data](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#items-data)
-- [Level IDs](https://github.com/SiR-DanieL/MediEvil/edit/main/README.md#level-ids)
+- [Memory Addresses](#memory-addresses)
+    - [General Game Data](#general-game-data)
+    - [Bosses Data](d#bosses-data)
+    - [Inventory Data](#inventory-data)
+    - [Weapons Data](#weapons-data)
+    - [Items Data](#items-data)
+- [Level IDs](#level-ids)
 
 ## Memory Addresses
 
