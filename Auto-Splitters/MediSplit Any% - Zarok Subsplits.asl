@@ -57,12 +57,7 @@ start {
 
 /**
  * This section handles the automatic splits.
- * You can customize it based on your splits layout by commenting/removing and uncommenting some lines.
- * A line that is commented begins with a double-slash symbol (//). Removing the // will uncomment
- * the line and the code will become active.
- * Also, if your splits have different names than the regular level names, you must change them here to match your splits.
- *
- * Follow the instructions in the block below to activate/deactivate some sections.
+ * You can customize it based on your splits layout by changing the names of the levels to match your LiveSplit splits layout.
  */
 split {
     var currSegName = timer.CurrentSplit.Name;
@@ -70,75 +65,24 @@ split {
     var prevLevel = old.levelID;
 
     if (currSegName == "Dan's Crypt") { return currLevel == 26 && prevLevel == 6; }
-
     else if (currSegName == "The Graveyard") { return currLevel == 26 && prevLevel == 12; }
     else if (currSegName == "Cemetery Hill") { return currLevel == 26 && prevLevel == 5; }
-
-    /**
-     * If you want to use a subsplit to track the Stained Glass Demon fight, delete the following
-     * line and uncomment the two lines below.
-     *
-     * Change the currSegName value to match your splits or subsplits.
-     */
     else if (currSegName == "The Hilltop Mausoleum") { return currLevel == 26 && prevLevel == 7; }
-    //else if (currSegName == "-Release the Demon") { return currLevel == 7 && current.isBoss == 1 && old.isBoss == 0; }
-    //else if (currSegName == "{The Hilltop Mausoleum} Stained Glass Demon") { return currLevel == 26 && prevLevel == 7; }
-
-    /**
-     * If you want to use a subsplit to track the Guardians of the graveyard's fight, delete the following
-     * line and uncomment the two lines below.
-     *
-     * Change the currSegName value to match your splits or subsplits.
-     */
-    else if (currSegName == "Guardians of the Graveyard") { return currLevel == 26 && prevLevel == 13; }
-    //else if (currSegName == "-Reach the Guardians") { return currLevel == 13 && current.isBoss == 1 && old.isBoss == 0; }
-    //else if (currSegName == "{Return to the Graveyard} Guardians of the Graveyard") { return currLevel == 26 && prevLevel == 13; }
-
+    else if (currSegName == "Return to the Graveyard") { return currLevel == 26 && prevLevel == 13; }
     else if (currSegName == "The Enchanted Earth") { return currLevel == 26 && prevLevel == 8; }
     else if (currSegName == "Pools Of The Ancient Dead") { return currLevel == 26 && prevLevel == 18; }
     else if (currSegName == "The Lake") { return currLevel == 26 && prevLevel == 17; }
     else if (currSegName == "The Crystal Caves") { return currLevel == 26 && prevLevel == 4; }
-
-    /**
-     * The following three lines of code handle the Rune Smuggle and Gallows Gauntlet splits.
-     *
-     * - If you just want a split for the Gallows, leave the code as is.
-     * - If you want a Rune Smuggle split but without subsplits, uncomment the two other lines and remove
-     *   the - in the Rune Smuggle segment, and {The Gallows Gauntlet} in the subsequent line.
-     * - If you want a Rune Smuggle split with subsplits, delete the line
-     *   right after this comment block and uncomment the other two lines.
-     *
-     * Change the currSegName value to match your splits or subsplits.
-     */
     else if (currSegName == "The Gallows Gauntlet) { return currLevel == 26 && prevLevel == 10; }
-    //else if (currSegName == "-Rune Smuggle") { return currLevel == 26 && prevLevel == 24 && current.starRune == 1; }
-    //else if (currSegName == "{The Gallows Gauntlet} The Gallows Gauntlet") { return currLevel == 26 && prevLevel == 10; }
-
     else if (currSegName == "The Haunted Ruins") { return currLevel == 26 && prevLevel == 15; }
     else if (currSegName == "The Ghost Ship") { return currLevel == 26 && prevLevel == 11; }
     else if (currSegName == "The Entrance Hall") { return currLevel == 26 && prevLevel == 9; }
     else if (currSegName == "The Time Device") {  return currLevel == 26 && prevLevel == 23; }
 
-    /**
-     * The following blocks handle Zarok's Lair splits.
-     * You can have one with subsplits, one with 3 separate splits, or a single split.
-     * By default, the one with subsplits is active. To activate the others, remove or comment the default 3 lines
-     * and uncomment the code you want to activate.
-     *
-     * Change the currSegName value to match your splits or subsplits.
-     */
-    // Zarok's Lair with subsplits
+    // Zarok's Lair with subsplits. Change the currSegName value to match your splits or subsplits.
     else if (currSegName == "-Fazguls") { return currLevel == 25 && current.cameraView == 20 && current.musicTrack == 16; }
     else if (currSegName == "-Kardok") { return currLevel == 25 && current.isBoss == 0 && old.isBoss == 1; }
     else if (currSegName == "{Zarok's Lair} Zarok") { return currLevel == 25 && current.bossHealth == 0 && old.bossHealth < 65 && current.musicTrack == 21; }
-    
-    // Zarok's Lair with 3 separate splits
-    //else if (currSegName == "Fazguls") { return currLevel == 25 && current.cameraView == 20 && current.musicTrack == 16; }
-    //else if (currSegName == "Kardok") { return currLevel == 25 && current.isBoss == 0 && old.isBoss == 1; }
-    //else if (currSegName == "Zarok") { return currLevel == 25 && current.bossHealth == 0 && old.bossHealth < 65 && current.musicTrack == 21; }
-
-    // Zarok's Lair with single split
-    //else if (currSegName == "Zarok's Lair") { return currLevel == 25 && current.bossHealth == 0 && old.bossHealth < 65 && current.music == 21; }
 }
 
 reset {
