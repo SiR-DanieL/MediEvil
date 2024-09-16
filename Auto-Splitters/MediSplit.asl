@@ -69,11 +69,7 @@ start {
 /**
  * This section handles the automatic splits.
  */
-split {
-    var currSegName = timer.CurrentSplit.Name;
-    var currLevel = current.levelID;
-    var prevLevel = old.levelID;
-    
+split {    
     if( current.level == 25) {
         if( settings["zarokSplits"] ) {
             if( current.cameraView == 20 && current.musicTrack == 16 && current.isBoss == 0 ) { return true; }
