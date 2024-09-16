@@ -74,7 +74,7 @@ split {
     else if (currSegName == "The Lake") { return currLevel == 26 && prevLevel == 17; }
     else if (currSegName == "The Crystal Caves") { return currLevel == 26 && prevLevel == 4; }
     else if (currSegName == "Rune Smuggle") { return currLevel == 26 && prevLevel == 24 && current.starRune == 1; }
-    else if (currSegName == "The Gallows Gauntlet) { return currLevel == 26 && prevLevel == 10; }
+    else if (currSegName == "The Gallows Gauntlet") { return currLevel == 26 && prevLevel == 10; }
     else if (currSegName == "The Haunted Ruins") { return currLevel == 26 && prevLevel == 15; }
     else if (currSegName == "The Ghost Ship") { return currLevel == 26 && prevLevel == 11; }
     else if (currSegName == "The Entrance Hall") { return currLevel == 26 && prevLevel == 9; }
