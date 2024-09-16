@@ -74,7 +74,7 @@ These addresses track the ownership and ammos of weapons and other inventory ite
 |The Graveyard|12|
 |Cemetery Hill|5|
 |The Hilltop Mausoleum|7|
-|Return To The Graveyard|13|
+|Return to the Graveyard|13|
 |Scarecrow Fields|21|
 |Pumpkin Gorge|19|
 |The Pumpkin Serpent|20|
