@@ -69,37 +69,37 @@ startup {
             "Scarecrow Fields",
             "Split upon completing Scarecro Fields.",
             "anyNoDGS",
-            new Func<bool>(() => vars.isMap() && vars.oldLevel == 12)
+            new Func<bool>(() => vars.isMap() && vars.oldLevel == 21)
         )},
         {"gorge", Tuple.Create(
             "Pumpkin Gorge",
             "Split upon completing Pumpkin Gorge.",
             "anyNoDGS",
-            new Func<bool>(() => vars.isMap() && vars.oldLevel == 12)
+            new Func<bool>(() => vars.isMap() && vars.oldLevel == 19)
         )},
         {"serpent", Tuple.Create(
             "The Pumpkin Serpent",
             "Split upon completing The Pumpkin Serpent.",
             "anyNoDGS",
-            new Func<bool>(() => vars.isMap() && vars.oldLevel == 12)
+            new Func<bool>(() => vars.isMap() && vars.oldLevel == 20)
         )},
         {"sleepingVillage", Tuple.Create(
             "The Sleeping Village",
             "Split upon completing The Sleeping Village.",
             "oneHundred",
-            new Func<bool>(() => vars.isMap() && vars.oldLevel == 12)
+            new Func<bool>(() => vars.isMap() && vars.oldLevel == 22)
         )},
         {"asylumGrounds", Tuple.Create(
             "The Asylum Grounds",
             "Split upon completing The Asylum Grounds.",
             "anyNoDGS",
-            new Func<bool>(() => vars.isMap() && vars.oldLevel == 12)
+            new Func<bool>(() => vars.isMap() && vars.oldLevel == 3)
         )},
         {"asylum", Tuple.Create(
-            "Inside the Asylum",
-            "Split upon completing Inside the Asylum.",
+            "Inside The Asylum",
+            "Split upon completing Inside The Asylum.",
             "anyNoDGS",
-            new Func<bool>(() => vars.isMap() && vars.oldLevel == 12)
+            new Func<bool>(() => vars.isMap() && vars.oldLevel == 16)
         )},
         {"enchantedEarth", Tuple.Create(
             "The Enchanted Earth",
@@ -177,31 +177,31 @@ startup {
             "Guardians of the Graveyard",
             "Split upon killing the Guardians fo the Graveyard in Return to the Graveyard.",
             "combatEvents",
-            new Func<bool>(() => vars.currLevel == 25 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
+            new Func<bool>(() => vars.currLevel == 13 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
         )},
         {"pumpkinKing", Tuple.Create(
             "The Pumpkin King",
             "Split upon killing Pumpkin King in The Pumpkin Serpent.",
             "combatEvents",
-            new Func<bool>(() => vars.currLevel == 25 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
+            new Func<bool>(() => vars.currLevel == 20 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
         )},
         {"antQueen", Tuple.Create(
             "The Ant Queen",
             "Split upon killing the Ant Queen in The Ant Caves.",
             "combatEvents",
-            new Func<bool>(() => vars.currLevel == 25 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
+            new Func<bool>(() => vars.currLevel == 12 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
         )},
         {"wingedDemons", Tuple.Create(
             "Winged Demons",
             "Split upon killing the Winged Demons in The Enchanted Earth.",
             "combatEvents",
-            new Func<bool>(() => vars.currLevel == 25 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
+            new Func<bool>(() => vars.currLevel == 8 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
         )},
         {"pirateCaptain", Tuple.Create(
             "Pirate Captain",
             "Split upon killing the Pirate Captain in The Ghost Ship.",
             "combatEvents",
-            new Func<bool>(() => vars.currLevel == 25 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
+            new Func<bool>(() => vars.currLevel == 11 && vars.currIsBoss == 0 && vars.oldIsBoss == 1 )
         )},
         {"The Fazguls' Battle", Tuple.Create(
             "The Fazguls' Battle",
