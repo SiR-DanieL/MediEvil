@@ -54,7 +54,7 @@ startup {
  * - The menu item "New Game" is highlighted
  */
 start {
-    bool doStart = current.newGamePressed == 1 && old.newGamePressed != 1 && current.levelID == 24 && current.newGameHighlight == 3
+    bool doStart = current.newGamePressed == 1 && old.newGamePressed != 1 && current.levelID == 24 && current.newGameHighlight == 3;
     
     if( doStart ) {
 
