@@ -35,6 +35,7 @@ All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the f
 |movingState|ushort|002A8B23|Describes the state of Dan.||
 |movingTimer|ushort|002A8B23|Counts for how long Dan has been moving. Jumping does not affect the timer. Dying pauses the timer but resets it as soon as you are revived.|50|
 |stillTimer|ushort|002A8B23|Counts for how long Dan has been standing still. Jumping does not reset the timer.|44|
+||ushort|002A8B23|This address changes from 0 (standing still) to 15 (walking) and 27 (running) with different values while stopping movement.|6B|
 
 **Moving State: HEX (Dec)**
 - Still: 00 00 (0)
