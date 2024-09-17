@@ -29,6 +29,26 @@ All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the f
 |musicTrack|byte|908F20|Contains the numeric ID of the music track being played.||
 |cameraView|byte|2A81FF|Contains the numeric ID of the camera view currently used.|2CC|
 
+### Movement Data
+|Name|Type|Address|Description|Offset|
+|---|---|---|---|---|
+|movingState|ushort|002A8B23|Describes the state of Dan.||
+|movingTimer|ushort|002A8B23|Counts for how long Dan has been moving. Jumping does not affect the timer. Dying pauses the timer but resets it as soon as you are revived.|50|
+|stillTimer|ushort|002A8B23|Counts for how long Dan has been standing still. Jumping does not reset the timer.|44|
+
+**Moving State: HEX (Dec)**
+- Still: 00 00 (0)
+- Jumping: 02 00 (2)
+- Crouching: 01 00 (1)
+- Walking: 00 01 (256)
+- Walking with shield up: 00 81 (33024)
+- Running: 40 00 (64)
+- Running with shield up: 40 40 (16448)
+- Dashing while running: 40 60 (16480)
+- Strafing right: 00 10 (4096)
+- Strafing left: 00 08 (2048)
+- Walking backward: 20 00 (32)
+
 ### Bosses Data
 |Name|Type|Address|Description|
 |---|---|---|---|
