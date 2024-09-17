@@ -78,6 +78,8 @@ These addresses track the ownership and ammos of weapons and other inventory ite
 ## Level IDs
 |Level Name|ID|
 |---|---|
+|Main Menu|24|
+|Map|26|
 |Dan's Crypt|6|
 |The Graveyard|12|
 |Cemetery Hill|5|
