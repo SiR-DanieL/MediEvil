@@ -16,18 +16,18 @@ These addresses are all consistent between resets of ePSXe. We only want to use 
 All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the full levelID address would be `ePSxe.exe+82A020`. For simplicity, we omit the `ePSxe.exe+` prefix in the tables below.
 
 ### General Game Data
-|Name|Type|Address|Description|
-|---|---|---|---|
-|levelID|byte|82A020|Contains the levle ID. Changes in between loading screens.|
-|newGameHighlighted|byte|833154|Set to 3 when *New Game* is highlighted on the main menu. Changes to 0 when not highlighted, and brifly to 4 while switching to another menu item.|
-|newGamePressed|byte|910EA3|Not sure what exactly this tracks, but it consistently changes values when *New Game* is pressed on the main menu, so it is used to track when a new run begins.|
-|lifeBottlesOwned|byte|91219D|Tracks the amount of life bottles owned.|
-|fullLifeBottles|byte|912199|Tracks how many full life bottles the player has.|
-|currentLife|byte|90B668|Contains the current life of the player.|
-|gold|ushort|9122AC|Contains the current gold owned.|
-|isGameOverFlame|byte|912834|Changes to 1 when the Game Over flame animation begins. Used to track death.|
-|musicTrack|byte|908F20|Contains the numeric ID of the music track being played.|
-|cameraView|byte|9CA074|Contains the numeric ID of the camera view currently used.|
+|Name|Type|Address|Description|Offset|
+|---|---|---|---|---|
+|levelID|byte|82A020|Contains the levle ID. Changes in between loading screens.||
+|newGameHighlighted|byte|833154|Set to 3 when *New Game* is highlighted on the main menu. Changes to 0 when not highlighted, and brifly to 4 while switching to another menu item.||
+|newGamePressed|byte|910EA3|Not sure what exactly this tracks, but it consistently changes values when *New Game* is pressed on the main menu, so it is used to track when a new run begins.||
+|lifeBottlesOwned|byte|91219D|Tracks the amount of life bottles owned.||
+|fullLifeBottles|byte|912199|Tracks how many full life bottles the player has.||
+|currentLife|byte|90B668|Contains the current life of the player.||
+|gold|ushort|9122AC|Contains the current gold owned.||
+|isGameOverFlame|byte|912834|Changes to 1 when the Game Over flame animation begins. Used to track death.||
+|musicTrack|byte|908F20|Contains the numeric ID of the music track being played.||
+|cameraView|byte|2A81FF|Contains the numeric ID of the camera view currently used.|2CC|
 
 ### Bosses Data
 |Name|Type|Address|Description|
