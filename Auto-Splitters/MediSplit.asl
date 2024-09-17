@@ -15,7 +15,7 @@ state("ePSXe") {
     byte newGamePressed : "ePSxe.exe", 0x910EA3;
     byte isGameOverFlame : "ePSxe.exe", 0x912834;
     byte musicTrack : "ePSxe.exe", 0x908F20;
-    byte cameraView : "ePSxe.exe", 0x7880AC, 0x54;
+    byte cameraView : "ePSxe.exe", 0x2A81FF, 0x2CC;
 
     // Bosses Data
     byte isBoss : "ePSxe.exe", 0x90B72C;
