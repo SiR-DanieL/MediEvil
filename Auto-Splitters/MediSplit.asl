@@ -95,7 +95,7 @@ startup {
         )},
         {"crystalCaves", Tuple.Create(
             "The Crystal Caves", "Split upon completing The Crystal Caves", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.oldLevel == 4)
+            new Func<bool>(() => vars.isSettingOn("meanOldDragon") ? (vars.curLevel == 4 && vars.curIsBoss == 1 && vars.oldIsBoss == 0) : (vars.isMap() && vars.oldLevel == 4))
         )},
         {"gallows", Tuple.Create(
             "The Gallows Gauntlet", "Split upon completing The Gallows Gauntlet", "levels", true,
@@ -140,6 +140,10 @@ startup {
         {"wingedDemons", Tuple.Create(
             "Winged Demons", "Split upon killing the Winged Demons in The Enchanted Earth.", "combatEvents", false,
             new Func<bool>(() => vars.isMap() && vars.oldLevel == 8 )
+        )},
+        {"meanOldDragon", Tuple.Create(
+            "Mean Old Dragon", "Split upon killing the Mean Old Dragon in The Crystal Caves.", "combatEvents", false,
+            new Func<bool>(() => vars.isMap() && vars.oldLevel == 4 )
         )},
         {"pirateCaptain", Tuple.Create(
             "Pirate Captain", "Split upon killing the Pirate Captain in The Ghost Ship.", "combatEvents", false,
@@ -216,6 +220,8 @@ init {
     vars.isMap = (Func<bool>)(() => { return vars.curLevel == 26; });
     vars.isIntro = (Func<bool>)(() => { return vars.curLevel == 24; });
     vars.wasIntro = (Func<bool>)(() => { return vars.oldLevel == 24; });
+    vars.isHOE = (Func<bool>)(() => { return vars.curLevel == 14; });
+    vars.wasHOE = (Func<bool>)(() => { return vars.oldLevel == 14; });
     vars.isGameOver = (Func<bool>)(() => { return vars.isGameOverFlame == 1 || ( vars.isIntro() && ! vars.wasIntro() ); });
     vars.isSettingOn = (Func<string, bool>)((settingName) => { return settings[settingName]; });
 }
@@ -249,7 +255,7 @@ split {
     vars.refreshVars();
 
     foreach( var data in vars.splitsData ) {
-        if( data.Value.Item5() && vars.checkSplit( data.Key ) ) { // Corrected to lowercase 'checkSplit'
+        if( data.Value.Item5() && vars.checkSplit( data.Key ) ) {
             vars.debug( "Split for " + data.Key );
 
             return true;
