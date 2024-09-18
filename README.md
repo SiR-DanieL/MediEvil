@@ -3,6 +3,7 @@ Tools and docs for MediEvil for PSX.
 
 - [Memory Addresses](#memory-addresses)
     - [General Game Data](#general-game-data)
+    - [Movement Data](#movement-data)
     - [Bosses Data](d#bosses-data)
     - [Inventory Data](#inventory-data)
     - [Weapons Data](#weapons-data)
@@ -32,11 +33,11 @@ All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the f
 ### Movement Data
 |Name|Type|Address|Description|Offset|
 |---|---|---|---|---|
-|movingState|ushort|002A8B23|Describes the state of Dan.||
-|movingTimer|ushort|002A8B23|Counts for how long Dan has been moving. Jumping does not affect the timer. Dying pauses the timer but resets it as soon as you are revived.|50|
-|stillTimer|ushort|002A8B23|Counts for how long Dan has been standing still. Jumping does not reset the timer.|44|
-||ushort|002A8B23|This address changes from 0 (standing still) to 15 (walking) and 27 (running) with different values while stopping movement.|6B|
-|direction|ushort|002A8B23|Direction that Dan is facing.|2AC|
+|movingState|ushort|2A8B23|Describes the state of Dan.||
+|movingTimer|ushort|2A8B23|Counts for how long Dan has been moving. Jumping does not affect the timer. Dying pauses the timer but resets it as soon as you are revived.|50|
+|stillTimer|ushort|2A8B23|Counts for how long Dan has been standing still. Jumping does not reset the timer.|44|
+||ushort|2A8B23|This address changes from 0 (standing still) to 15 (walking) and 27 (running) with different values while stopping movement.|6B|
+|direction|ushort|2A8B23|Direction that Dan is facing.|2AC|
 
 **Moving State: HEX (Dec)**
 - Still: 00 00 (0)
