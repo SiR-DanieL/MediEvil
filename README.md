@@ -22,15 +22,15 @@ Generally, the PSX's RAM on ePSXe starts at `ePSxe.exe+81A020`. Where present, t
 |Name|Type|Address|Description|Offset|Offset in RAM|
 |---|---|---|---|---|---|
 |levelID|byte|82A020|Contains the levle ID. Changes in between loading screens.||0x80010000|
-|newGameHighlighted|byte|833154|Set to 3 when *New Game* is highlighted on the main menu. Changes to 0 when not highlighted, and brifly to 4 while switching to another menu item.||0x80019134|
-|newGamePressed|byte|910EA3|Not sure what exactly this tracks, but it consistently changes values when *New Game* is pressed on the main menu, so it is used to track when a new run begins.||0x800F6E83|
-|lifeBottlesOwned|byte|91219D|Tracks the amount of life bottles owned.|||
-|fullLifeBottles|byte|912199|Tracks how many full life bottles the player has.|||
-|currentLife|byte|90B668|Contains the current life of the player.|||
-|gold|ushort|9122AC|Contains the current gold owned.|||
-|isGameOverFlame|byte|912834|Changes to 1 when the Game Over flame animation begins. Used to track death.||
-|musicTrack|byte|908F20|Contains the numeric ID of the music track being played.||0x800EEF00|
-|cameraView|byte||Contains the numeric ID of the camera view currently used.|2CC|0x801AF6C0|
+|newGameHighlighted|byte|833154|Set to 3 when *New Game* is highlighted on the main menu. Changes to 0 when not highlighted, and brifly to 4 while switching to another menu item.|0x80019134|
+|newGamePressed|byte|910EA3|Not sure what exactly this tracks, but it consistently changes values when *New Game* is pressed on the main menu, so it is used to track when a new run begins.|0x800F6E83|
+|lifeBottlesOwned|byte|91219D|Tracks the amount of life bottles owned.|0x800F817D|
+|fullLifeBottles|byte|912199|Tracks how many full life bottles the player has.|0x800F8179|
+|currentLife|byte|90B668|Contains the current life of the player.|0x800F1648|
+|gold|ushort|9122AC|Contains the current gold owned.|0x800F828C|
+|isGameOverFlame|byte|912834|Changes to 1 when the Game Over flame animation begins. Used to track death.|0x800F8814|
+|musicTrack|byte|908F20|Contains the numeric ID of the music track being played.|0x800EEF00|
+|cameraView|byte|9C96E0|Contains the numeric ID of the camera view currently used.|0x801AF6C0|
 
 ### Movement Data
 |Name|Type|Address|Description|Offset|
