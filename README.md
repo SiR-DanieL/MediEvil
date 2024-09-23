@@ -19,9 +19,9 @@ All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the f
 Generally, the PSX's RAM on ePSXe starts at `ePSxe.exe+81A020`. Where present, the **Offset in RAM** column indicates the address in relation to the beginning address of the RAM in system/kernel format. The RAM would begin at `0x80000000`.
 
 ### General Game Data
-|Name|Type|Address|Description|Offset|Offset in RAM|
-|---|---|---|---|---|---|
-|levelID|byte|82A020|Contains the levle ID. Changes in between loading screens.||0x80010000|
+|Name|Type|Address|Description|Offset in RAM|
+|---|---|---|---|---|
+|levelID|byte|82A020|Contains the levle ID. Changes in between loading screens.|0x80010000|
 |newGameHighlighted|byte|833154|Set to 3 when *New Game* is highlighted on the main menu. Changes to 0 when not highlighted, and brifly to 4 while switching to another menu item.|0x80019134|
 |newGamePressed|byte|910EA3|Not sure what exactly this tracks, but it consistently changes values when *New Game* is pressed on the main menu, so it is used to track when a new run begins.|0x800F6E83|
 |lifeBottlesOwned|byte|91219D|Tracks the amount of life bottles owned.|0x800F817D|
