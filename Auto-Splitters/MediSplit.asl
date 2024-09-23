@@ -2,7 +2,7 @@
  * MediSplit - Auto Starter and Auto Splitter for all categories and LiveSplit layouts of MediEvil speedruns on ePSXe.
  *
  * @author SirDarcanos
- * @contributors Xeelze, 7eraser7, BlackMenthol
+ * @contributors Xeelze, 7eraser7, BlackMenthol, NoobKillerRoof
  * @version 1.0.0
  * @link https://github.com/SiR-DanieL/MediEvil/tree/main/Auto-Splitters
  * @tested-on ePSXe 2.0.0
