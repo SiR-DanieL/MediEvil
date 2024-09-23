@@ -16,19 +16,21 @@ These addresses are all consistent between resets of ePSXe. We only want to use 
 
 All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the full levelID address would be `ePSxe.exe+82A020`. For simplicity, we omit the `ePSxe.exe+` prefix in the tables below.
 
+Generally, the RAM of the PSX on ePSXe starts at `ePSxe.exe+81A020`.
+
 ### General Game Data
-|Name|Type|Address|Description|Offset|
-|---|---|---|---|---|
-|levelID|byte|82A020|Contains the levle ID. Changes in between loading screens.||
-|newGameHighlighted|byte|833154|Set to 3 when *New Game* is highlighted on the main menu. Changes to 0 when not highlighted, and brifly to 4 while switching to another menu item.||
-|newGamePressed|byte|910EA3|Not sure what exactly this tracks, but it consistently changes values when *New Game* is pressed on the main menu, so it is used to track when a new run begins.||
-|lifeBottlesOwned|byte|91219D|Tracks the amount of life bottles owned.||
-|fullLifeBottles|byte|912199|Tracks how many full life bottles the player has.||
-|currentLife|byte|90B668|Contains the current life of the player.||
-|gold|ushort|9122AC|Contains the current gold owned.||
+|Name|Type|Address|Description|Offset|Offset in RAM|
+|---|---|---|---|---|---|
+|levelID|byte|82A020|Contains the levle ID. Changes in between loading screens.||0x80010000|
+|newGameHighlighted|byte|833154|Set to 3 when *New Game* is highlighted on the main menu. Changes to 0 when not highlighted, and brifly to 4 while switching to another menu item.||0x80019134|
+|newGamePressed|byte|910EA3|Not sure what exactly this tracks, but it consistently changes values when *New Game* is pressed on the main menu, so it is used to track when a new run begins.||0x800F6E83|
+|lifeBottlesOwned|byte|91219D|Tracks the amount of life bottles owned.|||
+|fullLifeBottles|byte|912199|Tracks how many full life bottles the player has.|||
+|currentLife|byte|90B668|Contains the current life of the player.|||
+|gold|ushort|9122AC|Contains the current gold owned.|||
 |isGameOverFlame|byte|912834|Changes to 1 when the Game Over flame animation begins. Used to track death.||
-|musicTrack|byte|908F20|Contains the numeric ID of the music track being played.||
-|cameraView|byte|2A81FF|Contains the numeric ID of the camera view currently used.|2CC|
+|musicTrack|byte|908F20|Contains the numeric ID of the music track being played.||0x800EEF00|
+|cameraView|byte||Contains the numeric ID of the camera view currently used.|2CC|0x801AF6C0|
 
 ### Movement Data
 |Name|Type|Address|Description|Offset|
@@ -53,10 +55,10 @@ All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the f
 - Walking backward: 20 00 (32)
 
 ### Bosses Data
-|Name|Type|Address|Description|
-|---|---|---|---|
-|isBoss|byte|90B72C|Set to 1 if a boss is present, otherwise 0.|
-|bossHealth|ushort|90B734|Contains the current health of the boss, or 0 when no boss is present.|
+|Name|Type|Address|Description|Offset in RAM|
+|---|---|---|---|---|
+|isBoss|byte|90B72C|Set to 1 if a boss is present, otherwise 0.|0x800F170C|
+|bossHealth|ushort|90B734|Contains the current health of the boss, or 0 when no boss is present.|0x800F1714|
 
 ### Inventory Data
 These addresses track the ownership and ammos of weapons and other inventory items. They are set to `FF 00` (255 in decimal) when the player does not own the specific item, changing to `00 00` (0 in decimal), `01 00` (1 in decimal), or the amount of ammos/durability when owning the item.
@@ -86,17 +88,17 @@ These addresses track the ownership and ammos of weapons and other inventory ite
 |goldShield|ushort|9122B4|
 
 ### Items Data
-|Name|Type|Address|
-|---|---|---|
-|chaosRune|ushort|912250|
-|earthRune|ushort|912254|
-|moonRune|ushort|912258|
-|starRune|ushort|91225C|
-|timeRune|ushort|912260|
-|skullKey|ushort|912268|
-|shadowArtefact|ushort|91227C|
-|witchTalisman|ushort|912284|
-|dragonGems|ushort|9122B0|
+|Name|Type|Address|Offset in RAM|
+|---|---|---|---|
+|chaosRune|ushort|912250||
+|earthRune|ushort|912254||
+|moonRune|ushort|912258||
+|starRune|ushort|91225C|0x800F823C|
+|timeRune|ushort|912260||
+|skullKey|ushort|912268||
+|shadowArtefact|ushort|91227C||
+|witchTalisman|ushort|912284||
+|dragonGems|ushort|9122B0||
 
 ## Level IDs
 |Level Name|ID|
