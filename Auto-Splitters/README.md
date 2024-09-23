@@ -13,3 +13,10 @@ Due to the usage of `emu-help-v2`, it might also work on Duckstation and other e
 * [MediEvil on Speedrun.com](https://www.speedrun.com/medievil)
 * [LiveSplit Auto Splitters Documentation](https://github.com/LiveSplit/LiveSplit.AutoSplitters)
 * [Emu-help Main Repository](https://github.com/Jujstme/emu-help/tree/master)
+
+## Contributors
+* SirDarcanos - Author
+* Xeelze - Author of the original script that inspired this rewrite
+* 7eraser7 - For helping with development and finding memory addresses
+* BlackMenthol - For testing and finding memory addresses
+* NoobKillerRoof - For testing
