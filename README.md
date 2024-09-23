@@ -16,7 +16,7 @@ These addresses are all consistent between resets of ePSXe. We only want to use 
 
 All the addresses are assumed to be prefixed by `ePSxe.exe+`. For example, the full levelID address would be `ePSxe.exe+82A020`. For simplicity, we omit the `ePSxe.exe+` prefix in the tables below.
 
-Generally, the RAM of the PSX on ePSXe starts at `ePSxe.exe+81A020`.
+Generally, the PSX's RAM on ePSXe starts at `ePSxe.exe+81A020`. Where present, the **Offset in RAM** column indicates the address in relation to the beginning address of the RAM in system/kernel format. The RAM would begin at `0x80000000`.
 
 ### General Game Data
 |Name|Type|Address|Description|Offset|Offset in RAM|
