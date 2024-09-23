@@ -64,41 +64,41 @@ Generally, the PSX's RAM on ePSXe starts at `ePSxe.exe+81A020`. Where present, t
 These addresses track the ownership and ammos of weapons and other inventory items. They are set to `FF 00` (255 in decimal) when the player does not own the specific item, changing to `00 00` (0 in decimal), `01 00` (1 in decimal), or the amount of ammos/durability when owning the item.
 
 ### Weapons Data
-|Name|Type|Address|
-|---|---|---|
-|smallSword|ushort|912214|
-|broadSword|ushort|912218|
-|club|ushort|912220|
-|magicSword|ushort|912222|
-|hammer|ushort|912224|
-|throwingDaggers|ushort|912228|
-|axe|ushort|91222C|
-|chickenDrumsticks|ushort|912230|
-|crossbow|ushort|912234|
-|longbow|ushort|912238|
-|flamingLongbow|ushort|91223C|
-|magicLongbow|ushort|912240|
-|spear|ushort|912244|
-|lightning|ushort|912248|
-|greenLightning|ushort|91224C|
-|dragonArmour|ushort|9122B8|
-|arm|ushort|912298|
-|copperShield|ushort|91229C|
-|silverShield|ushort|9122A0|
-|goldShield|ushort|9122B4|
+|Name|Type|Address|Offset in RAM|
+|---|---|---|---|
+|smallSword|ushort|912214|0x800F81F4|
+|broadSword|ushort|912218|0x800F81F8|
+|club|ushort|912220|0x800F8200|
+|magicSword|ushort|912222|0x800F8202|
+|hammer|ushort|912224|0x800F8204|
+|throwingDaggers|ushort|912228|0x800F8208|
+|axe|ushort|91222C|0x800F820C|
+|chickenDrumsticks|ushort|912230|0x800F8210|
+|crossbow|ushort|912234|0x800F8214|
+|longbow|ushort|912238|0x800F8218|
+|flamingLongbow|ushort|91223C|0x800F821C|
+|magicLongbow|ushort|912240|0x800F8220|
+|spear|ushort|912244|0x800F8224|
+|lightning|ushort|912248|0x800F8228|
+|greenLightning|ushort|91224C|0x800F822C|
+|dragonArmour|ushort|9122B8|0x800F8298|
+|arm|ushort|912298|0x800F8278|
+|copperShield|ushort|91229C|0x800F827C|
+|silverShield|ushort|9122A0|0x800F8280|
+|goldShield|ushort|9122B4|0x800F8294|
 
 ### Items Data
 |Name|Type|Address|Offset in RAM|
 |---|---|---|---|
-|chaosRune|ushort|912250||
-|earthRune|ushort|912254||
-|moonRune|ushort|912258||
+|chaosRune|ushort|912250|0x800F8230|
+|earthRune|ushort|912254|0x800F8234|
+|moonRune|ushort|912258|0x800F8238|
 |starRune|ushort|91225C|0x800F823C|
-|timeRune|ushort|912260||
-|skullKey|ushort|912268||
-|shadowArtefact|ushort|91227C||
-|witchTalisman|ushort|912284||
-|dragonGems|ushort|9122B0||
+|timeRune|ushort|912260|0x800F8240|
+|skullKey|ushort|912268|0x800F8248|
+|shadowArtefact|ushort|91227C|0x800F825C|
+|witchTalisman|ushort|912284|0x800F8264|
+|dragonGems|ushort|9122B0|0x800F8290|
 
 ## Level IDs
 |Level Name|ID|
