@@ -177,7 +177,7 @@ startup {
 }
 
 init {
-    refreshRate = 1;
+    refreshRate = 30;
     vars.completedSplits = new HashSet<string>();
     
     vars.checkSplit = (Func<string, bool>)(key => {
