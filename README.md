@@ -127,3 +127,4 @@ These addresses track the ownership and ammos of weapons and other inventory ite
 |The Entrance Hall|9|
 |The Time Device|23|
 |Zarok's Lair|25|
+|Hall of Heroes|14|
