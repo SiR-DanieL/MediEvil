@@ -11,22 +11,19 @@ state("LiveSplit") {}
 
 startup {
     /**
-     * @link https://github.com/Jujstme/emu-help/
+     * @link https://github.com/Jujstme/emu-help-v3
      */
-    Assembly.Load(File.ReadAllBytes("Components/emu-help-v2")).CreateInstance("PS1");
+    Assembly.Load(File.ReadAllBytes("Components/emu-help-v3")).CreateInstance("PS1");
 
-    vars.Helper.Load = (Func<dynamic, bool>)(emu => {
-        emu.Make<byte>("levelID", 0x80010000);
-        emu.Make<byte>("newGameHighlight", 0x80019134);
-        emu.Make<byte>("musicTrack", 0x800EEF00);
-        emu.Make<byte>("isBoss", 0x800F170C);
-        emu.Make<ushort>("bossHealth", 0x800F1714);
-        emu.Make<byte>("newGamePressed", 0x800F6E83);
-        emu.Make<ushort>("starRune", 0x800F823C);
-        emu.Make<byte>("isGameOverFlame", 0x800F8814);
-        emu.Make<byte>("cameraView", 0x801AF6C0);
-        return true;
-    });
+    vars.levelID = vars.Helper.Make<byte>(0x80010000);
+    vars.newGameHighlight = vars.Helper.Make<byte>(0x80019134);
+    vars.musicTrack = vars.Helper.Make<byte>(0x800EEF00);
+    vars.isBoss = vars.Helper.Make<byte>(0x800F170C);
+    vars.bossHealth = vars.Helper.Make<ushort>(0x800F1714);
+    vars.newGamePressed = vars.Helper.Make<byte>(0x800F6E83);
+    vars.starRune = vars.Helper.Make<ushort>(0x800F823C);
+    vars.isGameOverFlame = vars.Helper.Make<byte>(0x800F8814);
+    vars.cameraView = vars.Helper.Make<byte>(0x801AF6C0);
 
     vars.splitTypes = new Dictionary<string, Tuple<string, bool>> {
         {"levels", Tuple.Create("Level Splits", true)},
@@ -37,127 +34,127 @@ startup {
     vars.splitsData = new Dictionary<string, Tuple<string, string, string, bool, Func<bool>>> {
         {"crypt", Tuple.Create(
             "Dan's Crypt", "Splits upon completing Dan's Crypt.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 6)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 6)
         )},
         {"graveyard", Tuple.Create(
             "The Graveyard", "Splits upon completing The Graveyard.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 12)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 12)
         )},
         {"cemeteryHill", Tuple.Create(
             "Cemetery Hill", "Split upon completing Cemetery Hill.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 5)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 5)
         )},
         {"mausoleum", Tuple.Create(
             "The Hilltop Mausoleum", "Split upon completing The Hilltop Mausoleum.", "levels", true,
-            new Func<bool>(() => vars.isSettingOn("stainedGlassDemon") ? (vars.Helper["levelID"].Current == 7 && vars.Helper["isBoss"].Current == 1 && vars.Helper["isBoss"].Old == 0) : (vars.isMap() && vars.Helper["levelID"].Old == 7))
+            new Func<bool>(() => vars.isSettingOn("stainedGlassDemon") ? (vars.levelID.Current == 7 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 7))
         )},
         {"returnGraveyard", Tuple.Create(
             "Return to the Graveyard", "Split upon completing Return to the Graveyard.", "levels", true,
-            new Func<bool>(() => vars.isSettingOn("guardians") ? (vars.Helper["levelID"].Current == 13 && vars.Helper["isBoss"].Current == 1 && vars.Helper["isBoss"].Old == 0) : (vars.isMap() && vars.Helper["levelID"].Old == 13))
+            new Func<bool>(() => vars.isSettingOn("guardians") ? (vars.levelID.Current == 13 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 13))
         )},
         {"scarecrowFields", Tuple.Create(
             "Scarecrow Fields", "Split upon completing Scarecrow Fields.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 21)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 21)
         )},
         {"gorge", Tuple.Create(
             "Pumpkin Gorge", "Split upon completing Pumpkin Gorge.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 19)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 19)
         )},
         {"serpent", Tuple.Create(
             "The Pumpkin Serpent", "Split upon completing The Pumpkin Serpent.", "levels", true,
-            new Func<bool>(() => vars.isSettingOn("pumpkinKing") ? (vars.Helper["levelID"].Current == 20 && vars.Helper["isBoss"].Current == 1 && vars.Helper["isBoss"].Old == 0) : (vars.isMap() && vars.Helper["levelID"].Old == 20))
+            new Func<bool>(() => vars.isSettingOn("pumpkinKing") ? (vars.levelID.Current == 20 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 20))
         )},
         {"sleepingVillage", Tuple.Create(
             "The Sleeping Village", "Split upon completing The Sleeping Village.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 22)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 22)
         )},
         {"asylumGrounds", Tuple.Create(
             "The Asylum Grounds", "Split upon completing The Asylum Grounds.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 3)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 3)
         )},
         {"asylum", Tuple.Create(
             "Inside The Asylum", "Split upon completing Inside The Asylum.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 16)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 16)
         )},
         {"enchantedEarth", Tuple.Create(
             "The Enchanted Earth", "Split upon completing The Enchanted Earth.", "levels", true,
-            new Func<bool>(() => vars.isSettingOn("wingedDemons") ? (vars.Helper["levelID"].Current == 8 && vars.Helper["isBoss"].Current == 1 && vars.Helper["isBoss"].Old == 0) : (vars.isMap() && vars.Helper["levelID"].Old == 8))
+            new Func<bool>(() => vars.isSettingOn("wingedDemons") ? (vars.levelID.Current == 8 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 8))
         )},
         {"antCaves", Tuple.Create(
             "The Ant Caves", "Split upon completing The Ant Caves.", "levels", true,
-            new Func<bool>(() => vars.isSettingOn("antQueen") ? (vars.Helper["levelID"].Current == 2 && vars.Helper["isBoss"].Current == 1 && vars.Helper["isBoss"].Old == 0) : (vars.isMap() && vars.Helper["levelID"].Old == 2))
+            new Func<bool>(() => vars.isSettingOn("antQueen") ? (vars.levelID.Current == 2 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 2))
         )},
         {"pools", Tuple.Create(
             "Pools Of The Ancient Dead", "Split upon completing Pools Of The Ancient Dead.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 18)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 18)
         )},
         {"lake", Tuple.Create(
             "The Lake", "Split upon completing The Lake.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 17)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 17)
         )},
         {"crystalCaves", Tuple.Create(
             "The Crystal Caves", "Split upon completing The Crystal Caves", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 4)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 4)
         )},
         {"gallows", Tuple.Create(
             "The Gallows Gauntlet", "Split upon completing The Gallows Gauntlet", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 10)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 10)
         )},
         {"hauntedRuins", Tuple.Create(
             "The Haunted Ruins", "Split upon completing The Haunted Ruins.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 15)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 15)
         )},
         {"ghostShip", Tuple.Create(
             "The Ghost Ship", "Split upon completing The Ghost Ship.", "levels", true,
-            new Func<bool>(() => vars.isSettingOn("pirateCaptain") ? (vars.Helper["levelID"].Current == 11 && vars.Helper["isBoss"].Current == 1 && vars.Helper["isBoss"].Old == 0) : (vars.isMap() && vars.Helper["levelID"].Old == 11))
+            new Func<bool>(() => vars.isSettingOn("pirateCaptain") ? (vars.levelID.Current == 11 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 11))
         )},
         {"entranceHall", Tuple.Create(
             "The Entrance Hall", "Split upon completing The Entrance Hall.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 9)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 9)
         )},
         {"timeDevice", Tuple.Create(
             "The Time Device", "Split upon completing The Time Device.", "levels", true,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 23)
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 23)
         )},
         {"zarokLair", Tuple.Create(
             "Zarok's Lair", "Split upon killing Zarok in Zarok's Lair.", "levels", true,
-            new Func<bool>(() => vars.isZarokLair() && vars.Helper["bossHealth"].Current == 0 && vars.Helper["bossHealth"].Old < 65 && vars.Helper["musicTrack"].Current == 21 )
+            new Func<bool>(() => vars.isZarokLair() && vars.bossHealth.Current == 0 && vars.bossHealth.Old < 65 && vars.musicTrack.Current == 21 )
         )},
         {"stainedGlassDemon", Tuple.Create(
             "The Stainless Glass Demon", "Split upon killing the Stainless Glass Demon in The Hilltop Mausoleum.", "combatEvents", false,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 7 )
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 7 )
         )},
         {"guardians", Tuple.Create(
             "Guardians of the Graveyard", "Split upon killing the Guardians of the Graveyard in Return to the Graveyard.", "combatEvents", false,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 13 )
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 13 )
         )},
         {"pumpkinKing", Tuple.Create(
             "The Pumpkin King", "Split upon killing Pumpkin King in The Pumpkin Serpent.", "combatEvents", false,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 20 )
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 20 )
         )},
         {"antQueen", Tuple.Create(
             "The Ant Queen", "Split upon killing the Ant Queen in The Ant Caves.", "combatEvents", false,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 2 )
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 2 )
         )},
         {"wingedDemons", Tuple.Create(
             "Winged Demons", "Split upon killing the Winged Demons in The Enchanted Earth.", "combatEvents", false,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 8 )
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 8 )
         )},
         {"pirateCaptain", Tuple.Create(
             "Pirate Captain", "Split upon killing the Pirate Captain in The Ghost Ship.", "combatEvents", false,
-            new Func<bool>(() => vars.isMap() && vars.Helper["levelID"].Old == 11 )
+            new Func<bool>(() => vars.isMap() && vars.levelID.Old == 11 )
         )},
         {"fazguls", Tuple.Create(
             "The Fazguls' Battle", "Split upon completing the battle between Fazguls and Dan's soldiers in Zarok's Lair.", "combatEvents", true,
-            new Func<bool>(() => vars.isSettingOn("fazguls") && vars.isZarokLair() && vars.Helper["cameraView"].Current == 20 && vars.Helper["musicTrack"].Current == 16 )
+            new Func<bool>(() => vars.isSettingOn("fazguls") && vars.isZarokLair() && vars.cameraView.Current == 20 && vars.musicTrack.Current == 16 )
         )},
         {"kardok", Tuple.Create(
             "Kardok", "Split upon killing Kardok in Zarok's Lair.", "combatEvents", true,
-            new Func<bool>(() => vars.isSettingOn("kardok") && vars.isZarokLair() && vars.Helper["isBoss"].Current == 0 && vars.Helper["isBoss"].Old == 1 )
+            new Func<bool>(() => vars.isSettingOn("kardok") && vars.isZarokLair() && vars.isBoss.Current == 0 && vars.isBoss.Old == 1 )
         )},
         {"runeSmuggle", Tuple.Create(
             "Star Rune Smuggle", "Split upon loading back into the game after smuggling the Star Rune from Dan's Crypt for the alternative Any% route.", "specialEvents", false,
-            new Func<bool>(() => vars.isMap() && vars.Helper["starRune"].Current == 1 )
+            new Func<bool>(() => vars.isMap() && vars.starRune.Current == 1 )
         )},
     };
 
@@ -199,9 +196,9 @@ init {
 }
 
 update {
-    print((vars.isMap() && vars.Helper["starRune"].Current == 1).ToString());
+    print((vars.isMap() && current.starRune == 1).ToString());
     print(vars.isMap().ToString());
-    print((vars.Helper["starRune"].Current == 1).ToString());
+    print((current.starRune == 1).ToString());
     print("---");
 }
 
