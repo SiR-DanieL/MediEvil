@@ -27,7 +27,7 @@ startup {
         {"combatEvents", Tuple.Create("Bosses Splits", true)},
     };
 
-    settings.Add( "includeHOH", true, "Include HOH in current split" );
+    settings.Add( "includeHOH", true, "Include HOH in current split." );
 
     vars.splitsData = new Dictionary<string, Tuple<string, string, string, bool, Func<bool>>> {
         {"crypt", Tuple.Create(
