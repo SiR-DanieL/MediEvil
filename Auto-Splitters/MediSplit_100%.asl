@@ -153,8 +153,8 @@ init {
     });
 
     vars.isMap = (Func<bool>)(() => { return current.levelID == 26; });
-    vars.isHOH = (Func<bool>)(() => { return current.levelID == 0; });
-    vars.wasHOH = (Func<bool>)(() => { return old.levelID == 0; });
+    vars.isHOH = (Func<bool>)(() => { return current.levelID == 14; });
+    vars.wasHOH = (Func<bool>)(() => { return old.levelID == 14; });
     vars.isIntro = (Func<bool>)(() => { return current.levelID == 24; });
     vars.wasIntro = (Func<bool>)(() => { return old.levelID == 24; });
     vars.isZarokLair = (Func<bool>)(() => { return current.levelID == 25; });
