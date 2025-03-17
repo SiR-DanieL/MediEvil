@@ -1,9 +1,9 @@
 /**
- * MediSplit - Auto Starter and Auto Splitter for all categories and LiveSplit layouts of MediEvil speedruns on ePSXe.
+ * MediSplit - Auto Starter and Auto Splitter for all Any% categories and LiveSplit layouts of MediEvil speedruns on ePSXe.
  *
  * @author SirDarcanos
  * @contributors Xeelze, 7eraser7, BlackMenthol, NoobKillerRoof
- * @version 1.0.0
+ * @version 1.1.0
  * @link https://github.com/SiR-DanieL/MediEvil/tree/main/Auto-Splitters
  * @tested-on ePSXe 2.0.0
  */
@@ -45,11 +45,11 @@ startup {
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 5)
         )},
         {"mausoleum", Tuple.Create(
-            "The Hilltop Mausoleum", "Split upon completing The Hilltop Mausoleum.", "levels", true,
+            "The Hilltop Mausoleum", "Split upon completing The Hilltop Mausoleum or upon reaching the boss, if boss setting is enabled for this level..", "levels", true,
             new Func<bool>(() => vars.isSettingOn("stainedGlassDemon") ? (vars.levelID.Current == 7 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 7))
         )},
         {"returnGraveyard", Tuple.Create(
-            "Return to the Graveyard", "Split upon completing Return to the Graveyard.", "levels", true,
+            "Return to the Graveyard", "Split upon completing Return to the Graveyard or upon reaching the boss, if boss setting is enabled for this level.", "levels", true,
             new Func<bool>(() => vars.isSettingOn("guardians") ? (vars.levelID.Current == 13 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 13))
         )},
         {"scarecrowFields", Tuple.Create(
@@ -61,7 +61,7 @@ startup {
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 19)
         )},
         {"serpent", Tuple.Create(
-            "The Pumpkin Serpent", "Split upon completing The Pumpkin Serpent.", "levels", true,
+            "The Pumpkin Serpent", "Split upon completing The Pumpkin Serpent or upon reaching the boss, if boss setting is enabled for this level..", "levels", true,
             new Func<bool>(() => vars.isSettingOn("pumpkinKing") ? (vars.levelID.Current == 20 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 20))
         )},
         {"sleepingVillage", Tuple.Create(
@@ -77,11 +77,11 @@ startup {
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 16)
         )},
         {"enchantedEarth", Tuple.Create(
-            "The Enchanted Earth", "Split upon completing The Enchanted Earth.", "levels", true,
+            "The Enchanted Earth", "Split upon completing The Enchanted Earth or upon reaching the boss, if boss setting is enabled for this level..", "levels", true,
             new Func<bool>(() => vars.isSettingOn("wingedDemons") ? (vars.levelID.Current == 8 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 8))
         )},
         {"antCaves", Tuple.Create(
-            "The Ant Caves", "Split upon completing The Ant Caves.", "levels", true,
+            "The Ant Caves", "Split upon completing The Ant Caves or upon reaching the boss, if boss setting is enabled for this level..", "levels", true,
             new Func<bool>(() => vars.isSettingOn("antQueen") ? (vars.levelID.Current == 2 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 2))
         )},
         {"pools", Tuple.Create(
@@ -105,7 +105,7 @@ startup {
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 15)
         )},
         {"ghostShip", Tuple.Create(
-            "The Ghost Ship", "Split upon completing The Ghost Ship.", "levels", true,
+            "The Ghost Ship", "Split upon completing The Ghost Ship or upon reaching the boss, if boss setting is enabled for this level..", "levels", true,
             new Func<bool>(() => vars.isSettingOn("pirateCaptain") ? (vars.levelID.Current == 11 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.isMap() && vars.levelID.Old == 11))
         )},
         {"entranceHall", Tuple.Create(
@@ -121,27 +121,27 @@ startup {
             new Func<bool>(() => vars.isZarokLair() && vars.bossHealth.Current == 0 && vars.bossHealth.Old < 65 && vars.musicTrack.Current == 21 )
         )},
         {"stainedGlassDemon", Tuple.Create(
-            "The Stainless Glass Demon", "Split upon killing the Stainless Glass Demon in The Hilltop Mausoleum.", "combatEvents", false,
+            "The Stainless Glass Demon", "Split upon completing the level after killing the Stainless Glass Demon in The Hilltop Mausoleum.", "combatEvents", false,
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 7 )
         )},
         {"guardians", Tuple.Create(
-            "Guardians of the Graveyard", "Split upon killing the Guardians of the Graveyard in Return to the Graveyard.", "combatEvents", false,
+            "Guardians of the Graveyard", "Split upon completing the level after killing the Guardians of the Graveyard in Return to the Graveyard.", "combatEvents", false,
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 13 )
         )},
         {"pumpkinKing", Tuple.Create(
-            "The Pumpkin King", "Split upon killing Pumpkin King in The Pumpkin Serpent.", "combatEvents", false,
+            "The Pumpkin King", "Split upon killing completing the level after Pumpkin King in The Pumpkin Serpent.", "combatEvents", false,
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 20 )
         )},
         {"antQueen", Tuple.Create(
-            "The Ant Queen", "Split upon killing the Ant Queen in The Ant Caves.", "combatEvents", false,
+            "The Ant Queen", "Split upon completing the level after killing the Ant Queen in The Ant Caves.", "combatEvents", false,
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 2 )
         )},
         {"wingedDemons", Tuple.Create(
-            "Winged Demons", "Split upon killing the Winged Demons in The Enchanted Earth.", "combatEvents", false,
+            "Winged Demons", "Split upon completing the level after killing the Winged Demons in The Enchanted Earth.", "combatEvents", false,
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 8 )
         )},
         {"pirateCaptain", Tuple.Create(
-            "Pirate Captain", "Split upon killing the Pirate Captain in The Ghost Ship.", "combatEvents", false,
+            "Pirate Captain", "Split upon completing the level after killing the Pirate Captain in The Ghost Ship.", "combatEvents", false,
             new Func<bool>(() => vars.isMap() && vars.levelID.Old == 11 )
         )},
         {"fazguls", Tuple.Create(
