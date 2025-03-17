@@ -13,6 +13,7 @@ Due to the usage of `emu-help-v3`, it might also work on Duckstation and other e
 * [MediEvil on Speedrun.com](https://www.speedrun.com/medievil)
 * [LiveSplit Auto Splitters Documentation](https://github.com/LiveSplit/LiveSplit.AutoSplitters)
 * [Emu-help Main Repository](https://github.com/Jujstme/emu-help/tree/master)
+* [MediEvil Speedrunning Wiki](https://medievil.wiki/w/Speedrunning)
 
 ## Contributors
 * SirDarcanos - Author
