@@ -187,18 +187,18 @@ init {
         }
     });
 
-    vars.isMap = (Func<bool>)(() => { return current.levelID == 26; });
-    vars.isIntro = (Func<bool>)(() => { return current.levelID == 24; });
-    vars.wasIntro = (Func<bool>)(() => { return old.levelID == 24; });
-    vars.isZarokLair = (Func<bool>)(() => { return current.levelID == 25; });
-    vars.isGameOver = (Func<bool>)(() => { return current.isGameOverFlame == 1 || ( vars.isIntro() && ! vars.wasIntro() ); });
+    vars.isMap = (Func<bool>)(() => { return vars.levelID.Current == 26; });
+    vars.isIntro = (Func<bool>)(() => { return vars.levelID.Current == 24; });
+    vars.wasIntro = (Func<bool>)(() => { return vars.levelID.Old == 24; });
+    vars.isZarokLair = (Func<bool>)(() => { return vars.levelID.Current == 25; });
+    vars.isGameOver = (Func<bool>)(() => { return vars.isGameOverFlame.Current == 1 || ( vars.isIntro() && ! vars.wasIntro() ); });
     vars.isSettingOn = (Func<string, bool>)((settingName) => { return settings[settingName]; });
 }
 
 update {
-    print((vars.isMap() && current.starRune == 1).ToString());
+    print((vars.isMap() && vars.starRune.Current == 1).ToString());
     print(vars.isMap().ToString());
-    print((current.starRune == 1).ToString());
+    print((vars.starRune.Current == 1).ToString());
     print("---");
 }
 
@@ -216,7 +216,7 @@ onStart {
  * - The menu item "New Game" is highlighted
  */
 start {
-    bool doStart = current.newGamePressed == 1 && old.newGamePressed != 1 && vars.isIntro() && current.newGameHighlight == 3;
+    bool doStart = vars.newGamePressed.Current == 1 && vars.newGamePressed.Old != 1 && vars.isIntro() && vars.newGameHighlight.Current == 3;
 
     if( doStart ) {
         vars.debug( "Game has started. Timer started.");
@@ -237,7 +237,7 @@ split {
 
 reset {
     if (vars.isGameOver()) {
-        if (old.levelID == 6 && settings["runeSmuggle"] && (current.starRune == 1 || old.starRune == 1)) {
+        if (vars.levelID.Old == 6 && settings["runeSmuggle"] && (vars.starRune.Current == 1 || vars.starRune.Old == 1)) {
             print("Star Rune smuggle detected. Timer NOT reset.");
             return false;
         }
