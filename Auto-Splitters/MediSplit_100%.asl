@@ -47,7 +47,7 @@ startup {
         )},
         {"returnGraveyard", Tuple.Create(
             "Return to the Graveyard", "Split upon completing Return to the Graveyard or upon reaching the boss, if boss setting is enabled for this level.", "levels", true,
-            new Func<bool>(() => vars.isSettingOn("guardians") ? (vars.levelID.Current == 13 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.shouldSplit(13))
+            new Func<bool>(() => vars.isSettingOn("guardians") ? (vars.levelID.Current == 13 && vars.isBoss.Current == 1 && vars.isBoss.Old == 0) : (vars.shouldSplit(13)))
         )},
         {"scarecrowFields", Tuple.Create(
             "Scarecrow Fields", "Split upon completing Scarecrow Fields.", "levels", true,
