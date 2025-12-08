@@ -54,7 +54,7 @@ Generally, the PSX's RAM on ePSXe starts at `ePSxe.exe+81A020`. Where present, t
 - Strafing left: 00 08 (2048)
 - Walking backward: 20 00 (32)
 
-#### Coordinates
+#### Coordinates (signed word)
 
 **Return to the Graveyard**
 - Lateral: 0x8001c4a30 / 0x001c4a30
