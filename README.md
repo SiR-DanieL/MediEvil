@@ -61,6 +61,11 @@ Generally, the PSX's RAM on ePSXe starts at `ePSxe.exe+81A020`. Where present, t
 - Vertical: 0x8001c4a34 / 0x001c4a34
 - Fwd/Bkwd: 0x8001c4a38 / 0x001c4a38
 
+**Time Device**
+- Lateral: 0x8001cd818 / 0x001cd818
+- Vertical: 0x8001cd81c / 0x001cd81c
+- Fwd/Bkwd: 0x8001cd820 / 0x001cd820
+
 ### Bosses Data
 |Name|Type|Address|Description|Offset in RAM|
 |---|---|---|---|---|
