@@ -57,9 +57,9 @@ Generally, the PSX's RAM on ePSXe starts at `ePSxe.exe+81A020`. Where present, t
 #### Coordinates
 
 **Return to the Graveyard**
-Lateral: 0x8001c4a30 / 0x001c4a30
-Vertical: 0x8001c4a34 / 0x001c4a34
-Fwd/Bkwd: 0x8001c4a38 / 0x001c4a38
+- Lateral: 0x8001c4a30 / 0x001c4a30
+- Vertical: 0x8001c4a34 / 0x001c4a34
+- Fwd/Bkwd: 0x8001c4a38 / 0x001c4a38
 
 ### Bosses Data
 |Name|Type|Address|Description|Offset in RAM|
