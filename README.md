@@ -56,6 +56,11 @@ Generally, the PSX's RAM on ePSXe starts at `ePSxe.exe+81A020`. Where present, t
 
 #### Coordinates (signed word)
 
+**Dan's Crypt**
+- Lateral: 0x800183024 / 0x00183024
+- Vertical: 0x800183028 / 0x00183028
+- Fwd/Bkwd: 0x80018302c / 0x0018302c
+
 **Return to the Graveyard**
 - Lateral: 0x8001c4a30 / 0x001c4a30
 - Vertical: 0x8001c4a34 / 0x001c4a34
